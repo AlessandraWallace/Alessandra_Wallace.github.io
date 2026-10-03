@@ -1,321 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alessandra Wallace | Portfolio</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #263348;
-            background: #f8f7f5;
-            line-height: 1.6;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 7%;
-            background: white;
-        }
-
-        nav h2 {
-            font-family: Georgia, serif;
-            font-size: 27px;
-        }
-
-        nav a {
-            color: #263348;
-            text-decoration: none;
-            margin-left: 25px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .hero {
-            min-height: 400px;
-            padding: 80px 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: white;
-            background: linear-gradient(
-                rgba(20, 30, 50, .55),
-                rgba(20, 30, 50, .65)
-            ), url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1600")
-            center/cover;
-        }
-
-        .hero h1 {
-            font-family: Georgia, serif;
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 25px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #f8e9e5;
-            color: #263348;
-            text-decoration: none;
-            border-radius: 3px;
-            width: fit-content;
-        }
-
-        .button:hover {
-            background: #e8d2cb;
-        }
-
-        .about {
-            padding: 55px 7%;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        h2 {
-            font-family: Georgia, serif;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .features {
-            flex: 1.5;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            text-align: center;
-        }
-
-        .feature {
-            padding: 15px;
-        }
-
-        .icon {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .experience {
-            padding: 50px 7%;
-            background: #eef0f2;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 25px;
-        }
-
-        .card {
-            background: white;
-            padding-bottom: 20px;
-        }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card h3 {
-            font-family: Georgia, serif;
-            font-size: 21px;
-            margin: 12px 15px 5px;
-        }
-
-        .card p {
-            margin: 5px 15px;
-        }
-
-        .card a {
-            display: inline-block;
-            margin: 10px 15px;
-            color: #263348;
-        }
-
-        footer {
-            background: #202d42;
-            color: white;
-            padding: 35px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        footer h2 {
-            font-size: 25px;
-        }
-
-        footer a {
-            color: white;
-        }
-
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 5px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .about {
-                flex-direction: column;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            footer {
-                flex-direction: column;
-                text-align: center;
-                gap: 25px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alessandra Wallace's personal portfolio">
+  <title>Alessandra Wallace | Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      color: #263348;
+      background: #f8f7f5;
+      line-height: 1.6;
+    }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 18px; padding: 20px 7%; background: #fff;
+    }
+    nav h2 { font: 27px Georgia, serif; }
+    nav div { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a { color: #263348; text-decoration: none; }
+    nav a:hover, .card a:hover { text-decoration: underline; }
+    .hero {
+      min-height: 420px; padding: 80px 10%; display: flex;
+      flex-direction: column; justify-content: center; align-items: flex-start;
+      color: white;
+      background: linear-gradient(rgba(20,30,50,.55), rgba(20,30,50,.65)),
+        url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1600") center/cover;
+    }
+    .hero h1 { font: 55px Georgia, serif; margin-bottom: 12px; }
+    .hero p { font-size: 19px; margin-bottom: 8px; }
+    .button {
+      display: inline-block; margin-top: 18px; padding: 11px 23px;
+      background: #f8e9e5; color: #263348; text-decoration: none;
+      border-radius: 3px;
+    }
+    .button:hover { background: #e8d2cb; }
+    .about {
+      padding: 58px 7%; display: grid; grid-template-columns: 1fr 1.5fr;
+      align-items: center; gap: 48px;
+    }
+    h2 { font: 32px Georgia, serif; margin-bottom: 14px; }
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: center; }
+    .feature { padding: 14px; }
+    .icon { font-size: 30px; margin-bottom: 8px; }
+    .feature h3 { margin-bottom: 5px; }
+    .experience { padding: 52px 7%; background: #eef0f2; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 24px; }
+    .card { background: white; padding-bottom: 18px; }
+    .card img { display: block; width: 100%; height: 180px; object-fit: cover; }
+    .card h3 { font: 21px Georgia, serif; margin: 13px 16px 5px; }
+    .card p { margin: 5px 16px; }
+    .card a { display: inline-block; margin: 10px 16px 0; color: #263348; }
+    footer {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 24px; padding: 35px 7%; background: #202d42; color: white;
+    }
+    footer h2 { font-size: 25px; }
+    footer a { color: white; }
+    @media (max-width: 700px) {
+      nav { flex-direction: column; }
+      nav div { justify-content: center; gap: 14px; }
+      .hero { min-height: 350px; padding: 55px 7%; }
+      .hero h1 { font-size: 39px; }
+      .about { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
-
 <body>
+  <nav>
+    <h2>Alessandra Wallace</h2>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <nav>
-        <h2>Alessandra Wallace</h2>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
+  <main>
     <section class="hero" id="home">
-        <h1>Hi, I'm Alessandra</h1>
-        <p>Political Science & Leadership and Management Student</p>
-        <p>Future Diplomat | Global Thinker</p>
-        <a href="#about" class="button">Learn More →</a>
+      <h1>Hi, I'm Alessandra</h1>
+      <p>Political Science &amp; Leadership and Management Student</p>
+      <p>Future Diplomat | Global Thinker</p>
+      <a class="button" href="#about">Learn More →</a>
     </section>
 
     <section class="about" id="about">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>
-                I'm a Rutgers University student double majoring in
-                Leadership & Management and Political Science.
-                I'm passionate about international relations,
-                public policy, and the intersection of business
-                and government. I hope to build a career where
-                I can make an impact on a global scale.
-            </p>
-            <br>
-            <a href="#experience" class="button">More About Me →</a>
-        </div>
-
-        <div class="features">
-            <div class="feature">
-                <div class="icon">🌎</div>
-                <h3>Global Perspective</h3>
-                <p>Interested in international relations,
-                diplomacy, and European politics.</p>
-            </div>
-
-            <div class="feature">
-                <div class="icon">💼</div>
-                <h3>Business & Policy</h3>
-                <p>Focused on the intersection of business,
-                management, and public policy.</p>
-            </div>
-
-            <div class="feature">
-                <div class="icon">🤝</div>
-                <h3>Leadership</h3>
-                <p>Involved in student organizations
-                and community initiatives.</p>
-            </div>
-
-            <div class="feature">
-                <div class="icon">🎓</div>
-                <h3>Lifelong Learner</h3>
-                <p>Always seeking new experiences,
-                perspectives, and opportunities.</p>
-            </div>
-        </div>
+      <div>
+        <h2>About Me</h2>
+        <p>I'm a Rutgers University student double majoring in Leadership &amp; Management and Political Science. I'm interested in international relations, public policy, and the intersection of business and government. I hope to build a career where I can make an impact on a global scale.</p>
+        <a class="button" href="#experience">My Experience →</a>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="icon">🌎</div><h3>Global Perspective</h3><p>Interested in international relations, diplomacy, and European politics.</p></div>
+        <div class="feature"><div class="icon">💼</div><h3>Business &amp; Policy</h3><p>Exploring the connection between business, management, and public policy.</p></div>
+        <div class="feature"><div class="icon">🤝</div><h3>Leadership</h3><p>Building teamwork, communication, and leadership skills.</p></div>
+        <div class="feature"><div class="icon">🎓</div><h3>Lifelong Learner</h3><p>Seeking new experiences, perspectives, and opportunities.</p></div>
+      </div>
     </section>
 
     <section class="experience" id="experience">
-        <h2>Featured Experience</h2>
-
-        <div class="cards">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1559113202-c916b8e44347?w=800"
-                     alt="European city">
-                <h3>Study Abroad - Brussels</h3>
-                <p>Spring 2027 | Brussels, Belgium</p>
-                <p>Exploring international politics
-                and European institutions.</p>
-                <a href="#contact">Learn More →</a>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800"
-                     alt="Laptop and workspace">
-                <h3>Rutgers Law & Politics</h3>
-                <p>Spring 2026 | Section 9</p>
-                <p>Studying the relationship between
-                law, government, and politics.</p>
-                <a href="#contact">Learn More →</a>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800"
-                     alt="Coffee cup">
-                <h3>Professional Experience</h3>
-                <p>Barista at Ambee Coffee</p>
-                <p>Executive Assistant at an
-                Immigration Law Firm</p>
-                <a href="#contact">Learn More →</a>
-            </div>
-        </div>
+      <h2>Featured Experience</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1559113202-c916b8e44347?w=800" alt="European city">
+          <h3>Study Abroad — Brussels</h3><p>Spring 2027 | Brussels, Belgium</p><p>Exploring international politics and European institutions.</p>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Laptop and workspace">
+          <h3>Academic Experience</h3><p>Rutgers University</p><p>Studying business, leadership, and political science.</p>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800" alt="Coffee cup">
+          <h3>Professional Experience</h3><p>Customer service and administrative experience</p><p>Developing communication and organizational skills.</p>
+        </article>
+      </div>
     </section>
+  </main>
 
-    <footer id="contact">
-        <div>
-            <h2>Alessandra Wallace</h2>
-            <p>Building a more connected and informed world.</p>
-        </div>
-
-        <div>
-            <h2>Get in Touch</h2>
-            <p>Feel free to reach out!</p>
-            <a href="mailto:your@email.com">Contact Me →</a>
-        </div>
-    </footer>
-
+  <footer id="contact">
+    <div><h2>Alessandra Wallace</h2><p>Building a more connected and informed world.</p></div>
+    <div><h2>Get in Touch</h2><p><a href="mailto:your@email.com">Contact Me →</a></p></div>
+  </footer>
 </body>
 </html>
